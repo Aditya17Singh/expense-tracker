@@ -46,7 +46,7 @@ app.use(
     secret: process.env.SECRET,
     saveUninitialized: false,
     resave: false,
-    store: MongoStore.create({ mongoUrl: "mongodb://localhost/expense" }),
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_DB_ATLAS }),
   })
 );
 
