@@ -22,7 +22,7 @@ require("./modules/passport");
 
 //conect to database
 mongoose.connect(
-  "mongodb://localhost/expense",
+  process.env.MONGO_DB_ATLAS,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     console.log(err ? err : "Connected true");
