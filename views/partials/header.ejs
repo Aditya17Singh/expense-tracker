@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense | Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/508c3a88fa.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header flex">
+      <% if(user) { %>
+      <h1>
+        <a href="/">
+          <strong class="strong"> Expense Tracker </strong>
+        </a>
+      </h1>
+      <nav>
+        <ul>
+          <li class="flex flex-start">
+            <span>
+              <a class="flex flex-start user-name" href="">
+                <i class="fas fa-user-alt"></i>
+                <span class="use"> <%= user.firstname %> </span>
+              </a>
+            </span>
+            <button class="btn logout">
+              <a href="/users/logout"> Log Out </a>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <% } else{ %>
+      <h1>
+        <a href="/">
+          <strong class="strong"> Expense Tracker </strong>
+        </a>
+      </h1>
+      <nav>
+        <ul class="flex">
+          <li class="login">
+            <a href="/users/login"> Log In </a>
+          </li>
+          <li class="login">
+            <a href="/users/signup"> Sign Up </a>
+          </li>
+        </ul>
+      </nav>
+      <% } %>
+    </header>
+  </body>
+</html>
